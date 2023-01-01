@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
+body {
+    background-color: var(--background-color);
+}
+
 :root {
     --primary-color: aliceblue;
     --secondary-color: #5abdc0;
     --accent-color: #57dee5;
     --text-color: #222;
-    --background-color: #F2F2F2;
+    --background-color: #FFF3E4;
     --accept-color: #2ea44f;
 } 
 
@@ -13,6 +17,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
+    color: var(--text-color);
 }
 
 .vertical-center {
@@ -36,7 +41,7 @@
     height: auto;
     overflow: auto;
     background-color: antiquewhite;
-    background-color: antiquewhite;
+    background-color: #faead6;
 }
 
 .sweep:before {
@@ -128,3 +133,40 @@ ul li {
     padding-right: 25px;
     list-style-type: circle;
 }
+
+.page-title {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-line: underline;
+}
+
+.content {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    overflow: scroll;
+}
+
+.post {
+    background-color: #2098D1;
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+.post .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 25px;
+}
+
+.post .text {
+    font-size: 18px;
+    margin-top: 0;
+    padding: 0px 15px 25px 25px;
+}
+
