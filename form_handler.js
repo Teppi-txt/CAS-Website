@@ -1,12 +1,8 @@
-function handleSubmit(event) {
+function logSubmit(event) {
+    log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
     event.preventDefault();
+}
   
-    const data = new FormData(event.target);
-  
-    const value = data.get('email');
-  
-    console.log({ value });
-  }
-  
-  const form = document.querySelector('form');
-  form.addEventListener('submit', handleSubmit);
+const form = document.getElementById('form');
+const log = document.getElementById('log');
+form.addEventListener('submit', logSubmit);
