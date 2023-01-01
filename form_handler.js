@@ -5,5 +5,5 @@ function handleSubmit(event) {
     console.log({ value });
 }
   
-const form = document.querySelector('form');
+var form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
