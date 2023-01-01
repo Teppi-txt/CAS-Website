@@ -1,4 +1,11 @@
-function logSubmit(event) {
+function handleSubmit(event) {
+    event.preventDefault();
+  
+    const data = new FormData(event.target);
+  
+    const value = data.get('text');
+  
+    console.log({ value });
     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
     event.preventDefault();
 }
