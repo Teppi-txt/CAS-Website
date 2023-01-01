@@ -1,5 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary-color: aliceblue;
+    --secondary-color: #5abdc0;
+    --accent-color: #57dee5;
+    --text-color: #222;
+    --background-color: #F2F2F2;
+    --accept-color: #2ea44f;
+} 
+
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+   
+
 .modal {
-    display: contents;
+    display: block;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -11,26 +29,65 @@
     background-color: antiquewhite;
 }
 
+.modal .header {
+    padding: 2px 16px;
+    background-color: var(--secondary-color);
+}
+
+.modal .body {
+    padding: 2px 16px;
+}
+
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    background-color: var(--background-color);
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
 }
-  
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-  
-.close:hover,
-.close:focus {
-    color: black;
+
+
+.button {
+    position: relative;
+    margin: 25px 10px;
+    width: 100% - 25px;
+    height: 2em;
+    background-color: var(--accent-color);
     text-decoration: none;
-    cursor: pointer;
+    color: var(--text-color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* CSS */
+.quirky-button {
+  background-color: var(--accept-color);
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  margin: 25px 10px;
+  width: 100% - 25px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+}
+
+.quirky-button:hover {
+    color: rgb(0, 70, 0);
+}
+
+
+ul li {
+    padding-bottom: 15px;
+    list-style-type: circle;
 }

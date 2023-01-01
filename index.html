@@ -10,11 +10,26 @@
   </head>
   <body>
     <main>
-        <div id = "terms-modal" class = "modal">
+
+        <!--initial terms and service popup-->
+        <div id ="terms-modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
-              </div>            
+                <div class="header">
+                    <h2>Before you begin...</h2>
+                </div>
+                <div class="body">
+                    <ul class="list">
+                        <li>Don't commit crimes</li>
+                        <li>Don't hate against any specific group or person (the subject is fine)</li>
+                        <li>Milk</li>
+                        <li>Posts are completely anonymous, but can be seen by people visiting the site</li>
+                    </ul>
+
+                    <div class="quirky-button" id="modal-close">
+                        I AGREE TO THE TERMS AND CONDITIONS :D
+                    </div>
+                </div>
+            </div>            
         </div>
 
         <form id="form">
@@ -25,5 +40,6 @@
         <p id="log"></p>
     </main>
     <script src="form_handler.js"></script>
+    <script src="modal_handler.js"></script>
   </body>
 </html>
