@@ -29,7 +29,7 @@ app.post("/main", function(request, response, next) {
 
     const fs = require('fs');
 
-    let rawdata = fs.readFileSync('./public/data.json');
+    let rawdata = fs.readFileSync('data.json');
     let currentJson = JSON.parse(rawdata);
     currentJson.push([subject, text, currentDate]);
     var json = JSON.stringify(currentJson, null, 4);
