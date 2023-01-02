@@ -20,7 +20,7 @@ postBtn.onclick = function () {
         hint.style.display = "none";
         popup.style.visibility = "visible";
     }, 600);
-    
+
     setTimeout(() => {
         body.classList.remove("right-zoom-transition");
     }, 1200);
@@ -33,6 +33,8 @@ submitBtn.addEventListener('click', function () {
         setTimeout(() => {
             textBox.classList.remove("shake");
         }, 300);
+    } else {
+        window.location.href = "main";
     }
 })
 
