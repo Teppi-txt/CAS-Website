@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/59e87e232f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main>
+            <div class="screen" id="write-popup">
+                <div class="form-popup">
+                    <form method="post" action="/main">
+                        <h2 style="margin: 15px 25px 5px 25px;">Post a message <span class="close" id="closePostUI">&times;</span></h2>
+                        <div class="row" style="margin: 15px; margin-top: 5px;">
+                            <label class="prompt">Choose subject:</label>
+                            <select class="dropdown" id="subject" name="subject">
+                                <option value="General">General</option>
+    
+                                <optgroup label="English"></optgroup>
+                                <option value="English Lang & Lit">English Lang & Lit</option>
+                                <option value="English Lit">English Lit</option>
+    
+                                <optgroup label="Languages"></optgroup>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Mandarin">Mandarin</option>
+                                <option value="Vietnamese">Vietnamese</option>
+                                <option value="French">French</option>
+    
+                                <optgroup label="Individuals and Societies"></optgroup>
+                                <option value="Economics">Economics</option>
+                                <option value="Business">Business</option>
+                                <option value="History">History</option>
+                                <option value="Geography">Geography</option>
+                                <option value="Psychology">Psychology</option>
+    
+                                <optgroup label="Sciences"></optgroup>
+                                <option value="Physics">Physics</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Sports Science">Sports Science</option>
+                                <option value="Environmental Science">Environmental Science</option>
+    
+                                <optgroup label="The Arts"></optgroup>
+                                <option value="Music">Music</option>
+                                <option value="Visual Arts">Visual Arts</option>
+                                <option value="Film">Film</option>
+                                <option value="Drama">Drama</option>
+    
+                                <optgroup label="Misc."></optgroup>
+                                <option value="TOK">TOK</option>
+                                <option value="CAS">CAS</option>
+                                <option value="EE">EE</option>
+                            </select>
+                        </div>
+                        <textarea class="text-input" id="text" type="text" name="text" required></textarea>
+                        <button class="quirky-button" type="submit" action="submit" id="submit">Post Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <h1 class="hint-text" id="noPost">there are no posts yet... :(</h1>
+            <div class="content" id="content" style="padding: 0;">
+                <h1 class="page-title" style="z-index: 10;"><i class="fa-solid fa-bookmark header-icon"></i>General Board</h1>
+                <!--<div class="post" id="post">
+                    <div class="header">
+                        <h1 class="subject-display">Computer Science</h1>
+                        <h2 class="date">120502</h2> 
+                    </div>
+                    <p class="text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>-->
+
+                
+            </div>
+
+            <h2 class="right-hint-text" id="postHint">write something
+                <br>
+                ↓
+            </h2>
+            <h2 class="left-hint-text" id="postHint">other boards
+                <br>
+                ↓
+            </h2>
+            <div class="home-button" id="homeButton">
+                <i class="fa-solid fa-house" style="font-size: 70px;"></i>
+            </div>
+            <div class="write-button" id="writeButton">
+                <i class="fa-solid fa-pencil" style="font-size: 70px;"></i>
+            </div>
+            
+
+            <!--
+    <           form id="form">
+                <label>Test field: <input id="text" type="text" /></label>
+                <br /><br />
+                <button type="submit">Submit form</button>
+            </form>
+            <p id="log"></p>
+            -->
+
+
+        </main>
+        
+        <script src="form_handler.js"></script>
+        <script src="create_posts.js"></script>
+        <script src="hide_hints.js"></script>
+        <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "cas-website",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teppi-txt/CAS-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Teppi-txt/CAS-Website/issues"
+  },
+  "homepage": "https://github.com/Teppi-txt/CAS-Website#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
