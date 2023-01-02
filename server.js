@@ -33,7 +33,7 @@ app.post("/main", function(request, response, next) {
     let currentJson = JSON.parse(rawdata);
     currentJson.push([subject, text, currentDate]);
     var json = JSON.stringify(currentJson, null, 4);
-    fs.writeFileSync('./public/data.json', json);
+    fs.writeFileSync('data.json', json);
     response.render('pages/main');
 })
 
