@@ -26,7 +26,7 @@ postBtn.onclick = function () {
     }, 1200);
 }
 
-console.log(1);
+console.log(window.location.pathname);
 submitBtn.addEventListener('click', function () {
     if (textBox.value == "") {
         textBox.classList.add("shake");

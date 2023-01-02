@@ -27,11 +27,24 @@ app.post("/main", function(request, response, next) {
     var currentDate = ('0' + date.getDate()).slice(-2) + ('0' + (date.getMonth()+1)).slice(-2) + "23";
     console.log(request.body.subject);
 
+    //sanitize input
+    var sanitizedString = "";
+    for (var i = 0; i < text.length; i++) {
+        let char = text.charAt(i);
+        if (char == '<' || char == '>') {
+            continue;
+        } else if (char == '&') {
+            sanitizedString += "and";
+        } else {
+            sanitizedString += char;
+        }
+    }
+
     const fs = require('fs');
 
     let rawdata = fs.readFileSync('./public/data.json');
     let currentJson = JSON.parse(rawdata);
-    currentJson.push([subject, text, currentDate]);
+    currentJson.push([subject, sanitizedString, currentDate]);
     var json = JSON.stringify(currentJson, null, 4);
     fs.writeFileSync('./public/data.json', json);
     response.render('pages/main');
