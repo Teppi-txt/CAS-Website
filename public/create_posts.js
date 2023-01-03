@@ -1,9 +1,34 @@
 fetch('./data.json')
     .then((response) => response.json())
     .then((json) => json.forEach(element => {
-        createElement(element[0], element[1], element[2])
+        var subject = element[0].toLowerCase();
+        var current_page = window.location.pathname;
+        if (current_page == "/main") {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/english" && english_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/languages" && language_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/societies" && society_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/sciences" && science_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/maths" && math_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/arts" && art_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        } else if (current_page == "/misc" && misc_posts.includes(subject)) {
+            createElement(element[0], element[1], element[2])
+        }
     }));    
 
+var english_posts = ["english lang & lit", "english lit"];
+var language_posts = ["spanish", "french","vietnamese", "self taught", "mandarin"];
+var society_posts = ["economics", "business", "psychology", "history", "geography"];
+var science_posts = ["computer science","physics","chemistry","biology","design","sports science","environmental science"]
+var math_posts = ["math ai", "math aa"];
+var art_posts = ["music", "visual art", "drama", "film"];
+var misc_posts = [ "tok", "cas", "ee"];
     
 const content = document.getElementById("content");
 var colorDict = {

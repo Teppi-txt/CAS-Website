@@ -1,6 +1,7 @@
 // Load Node modules
 var express = require('express');
 const ejs = require('ejs');
+var url = require("url");
 // Initialise Express
 var app = express();
 var bodyParser = require('body-parser');
@@ -19,6 +20,30 @@ app.get('/', function (req, res) {
 app.get('/main', (req, res) => {
     res.render('pages/main');
 });
+
+app.get('/english', (req, res) => {
+    res.render('pages/english');
+});
+
+app.get('/languages', (req, res) => {
+    res.render('pages/languages');
+});
+app.get('/societies', (req, res) => {
+    res.render('pages/societies');
+});
+app.get('/sciences', (req, res) => {
+    res.render('pages/sciences');
+});
+app.get('/maths', (req, res) => {
+    res.render('pages/maths');
+});
+app.get('/arts', (req, res) => {
+    res.render('pages/arts');
+});
+app.get('/misc', (req, res) => {
+    res.render('pages/misc');
+});
+
 
 app.post("/main", function(request, response, next) {
     var subject = request.body.subject;
@@ -47,7 +72,7 @@ app.post("/main", function(request, response, next) {
     currentJson.push([subject, sanitizedString, currentDate]);
     var json = JSON.stringify(currentJson, null, 4);
     fs.writeFileSync('./public/data.json', json);
-    response.render('pages/main');
+    response.render("pages" + url.parse(request.url).pathname);
 })
 
 app.listen(3000);

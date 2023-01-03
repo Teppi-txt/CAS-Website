@@ -2,10 +2,13 @@ var noPostText = document.getElementById("noPost");
 var hint = document.getElementById("postHint");
 var postBtn = document.getElementById("writeButton");
 var popup = document.getElementById("write-popup");
+var pageBtn = document.getElementById("homeButton");
+var pagePopup = document.getElementById("page-popup");
 var body = document.body;
 var textBox = document.getElementById("text");
 var submitBtn = document.getElementById("submit");
-var close = document.getElementById("closePostUI");
+var closePost = document.getElementById("closePostUI");
+var closePage = document.getElementById("closePageUI");
 
 if (document.getElementsByClassName("post").length != 0) {
     noPostText.style.visibility = "hidden";
@@ -17,7 +20,6 @@ if (document.getElementsByClassName("post").length != 0) {
 postBtn.onclick = function () {
     body.classList.add("right-zoom-transition");
     setTimeout(() => {
-        hint.style.display = "none";
         popup.style.visibility = "visible";
     }, 600);
 
@@ -38,17 +40,40 @@ submitBtn.addEventListener('click', function () {
     }
 })
 
-textBox.onchange = function () {
-    textBox.value = textBox.value.trim();
+pageBtn.onclick = function () {
+    body.classList.add("left-zoom-transition");
+    setTimeout(() => {
+        pagePopup.style.visibility = "visible";
+    }, 600);
+
+    setTimeout(() => {
+        body.classList.remove("left-zoom-transition");
+    }, 1200);
 }
 
-close.onclick = function () {
-    body.classList.add("right-zoom-transition");
+closePost.onclick = function () {
+    popup.style.visibility = "hidden";
+}
+
+
+closePage.onclick = function () {
+    body.classList.add("left-zoom-transition");
     setTimeout(() => {
-        hint.style.display = "none";
-        popup.style.visibility = "hidden";
+        pagePopup.style.visibility = "hidden";
     }, 600);
     setTimeout(() => {
-        body.classList.remove("right-zoom-transition");
+        body.classList.remove("left-zoom-transition");
     }, 1200);
+}
+
+var page_buttons = document.getElementsByClassName('page-select');
+for(var i = 0; i < page_buttons.length; i++) {
+    var select = page_buttons[i];
+    console.log(select.innerHTML);
+    select.addEventListener('click', redirectPage);
+}
+
+function redirectPage(event) {
+    window.location.href = event.target.innerHTML.toLowerCase();
+    
 }
